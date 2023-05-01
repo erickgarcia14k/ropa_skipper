@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+/*Pseudoclase */
+
+:root{
+    --background-color:rgb(240, 152, 152);
+    --color-primario:blue;
+    --colortext:brown;
+    --colorVM:rgb(193, 207, 88);
+    --footer:rgb(205, 123, 123);
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*Resetenao los valores*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+
+}
+
+.Encabezado-1{
+    text-align: center;
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+.contenedor-uno{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+/*MODIFICANDO LOS ELEMENTOS DEL HEADER h1,a*/
+.contenedor-logo{
+    display: flex;
+    align-items: center;
+    gap: 2.5rem; /*Espacio entre filas y columnas*/
+}
+
+.contenedor-logo img{
+    width: 30px;
+}
+
+.contenedor-logo h1 {
+    color: brown;
+    font-size: 3rem;
+    text-transform: uppercase; /*Camniarla todo el texto en MAY*/
+    letter-spacing: -1px;
+}
+
+/** MODIFICACIONES DEL NAV**/
+
+.contenedor-menu{
+    background-color: var(--background-color);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.menu{
+    display: flex; /*Aqui establecemos a todos los elementos dentro en una solo FILA*/
+    gap: 4rem; /*El espacio  aplicacdo en filas y columnas*/
+}
+
+.menu li{
+    list-style: none; /*Quitamos las carcateristcas que viene por default  */
+}
+
+.menu a{
+    text-decoration: none; /*Que no se aplique las caracteristicas por default*/
+    font-size: 1.7rem;
+    color: var(--colortext); /*Ocupando mi valor guardado en root ,  propiedad: var(NOMBRE)*/
+    font-weight: 600;  /*Aplicando al texto en NEGRITAS*/
+    text-transform: uppercase;
+    position: relative;
+
+}
+
+
+.menu a::after{
+    width: 1.5rem;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%,50%);
+    opacity: 0;
+}
+
+
+.menu a:hover::after {
+	opacity: 1;
+}
+
+.menu a:hover {
+	color: #0be846;
+}
+
+/*MODIFICACIONES DE LA SECCION 1 BANNER*/
+.banner{
+    background-image: linear-gradient(100deg, #000000, #00000020),
+    url('../img/banner2.jpg');
+    height: 60rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.contenido-banner{
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 25rem 0;
+}
+
+.contenido-banner h2{
+    color: #fff;
+    font-size: 5.5rem;
+    font-weight: 500;
+    line-height: 2.3;
+}
+
+/*CATEGORIAS*/
+.top-categories{
+    display: flex;
+    flex-direction: column; /*La direcion sera en columnas*/
+    gap: 2rem;
+    margin-bottom: 3rem; /*Aplicando un margin debajo del elemento */
+}
+
+.container-categories{
+    display: grid;  /*rejilas(cuadricualdo)  */
+    grid-template-columns: repeat(3,1fr);  /* fr fraccion o proporcion , bajo columnas*/
+    gap: 3rem;
+}
+
+.card-category{
+    height: 20rem; /*Aplicacmos un alto*/
+    display: flex;
+    flex-direction: column; /*Especifica como se comportaran los elementos (columna)*/
+    align-items: center; /*Cada uno de los elementos que forma parte de una seccion*/
+    justify-content: center;
+    border-radius: 2rem; /*Recortar el borde de un elemento*/
+    gap: 2rem; /*Espacio entre columnas*/
+}
+
+.category-prenda1{
+    background-image:linear-gradient(#00000080, #00000080), url('../img/peso/ropa1-min.jpg');
+    background-size: cover;
+    background-position: bottom; /*posicionar la imagen de fondo con la direccion abajo*/
+    background-repeat: no-repeat;  /*Si la imagen es muy grande no se repita*/
+
+}
+
+.category-prenda3{
+    background-image:linear-gradient(#00000080, #00000080), url('../img/peso/prenda2-min.jpg');
+    background-size: cover;
+    background-position: bottom; /*posicionar la imagen de fondo con la direccion abajo*/
+    background-repeat: no-repeat;  /*Si la imagen es muy grande no se repita*/
+
+}
+.category-prenda2{
+    background-image:linear-gradient(#00000080, #00000080), url('../img/peso/prenda3-min.jpg');
+    background-size: cover;
+    background-position: bottom; /*posicionar la imagen de fondo con la direccion abajo*/
+    background-repeat: no-repeat;  /*Si la imagen es muy grande no se repita*/
+
+}
+
+.card-category p{
+    font-size: 2.5rem;
+    color: #fff; /*color del texto*/
+    text-transform: capitalize; /*Solamente la primera letra en Mayuscula*/
+    position:relative;
+}
+
+.card-category p::after{
+    content: '';
+    width: 2.5rem;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+.card-category span{
+    font-size: 1.6rem;
+    color: #fff;
+    cursor: pointer;  /*Modificando al puntero del mouse*/
+}
+
+.card-category span:hover{
+    color: var(--colorVM);
+
+}
+
+/*ESTILOS APLICADOS PARA EL FOOTER*/
+
+.footer{
+    background-color: var(--footer);
+
+}
+
+.container-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 3rem;
+}
+
+.menu-footer{
+    display: grid; 
+    grid-template-columns: repeat(3,1fr) 30rem;
+    gap: 4rem;
+    justify-items: center;  /*Los items son todos los elementos dentro de una seccion*/
+}
+
+.title-footer{
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-transform: uppercase; /*Hacer que todas las letras sean Mayusculas*/
+}
+
+.contact-info ul li{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}  
+
+/*Redes Sociales*/
+.social-icons{
+    display: flex;
+    gap: 1.5rem;
+    padding-top: 2rem;
+    }
+.social-icons img{
+    width: 5.5rem;
+}
+
+/*Seccion del APARTADO GALERIA*/
+
+.titulo{
+    text-align: center;
+    font-weight:300;
+    /*margen arriba y abajo de 20px y 0 hacia los lados*/
+    margin: 20px 0;
+    font-size: 30px;
+}
+
+/*Utilizando FlexBox para acomodar las iamgenes */
+.contenedor-galeria{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.caja-galeria{
+    width:28% ;
+    height: 250px;
+    margin-bottom: 30px;
+    position: relative;    
+    cursor: pointer;
+    /*Todo lo que salga de esa caja NO SE vea o se oculte*/
+    overflow: hidden;
+}
+ /*Pasando por la caja pádre necesito que la pasar por ensima se afecte la caja HIJO*/
+
+ .caja-galeria:hover .caja-hover{
+    /*Regrese a su posicion 0 - Original*/
+    transform: translate(0);
+    /*transform: scale(1);*/
+
+ }
+
+.caja-hover{
+      /*transform: scale(0);*/
+    /*Que se traslade en X y en Y*/  
+    transform: translate(100%,100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #912b2b7e;
+    color: #fff;
+    font-size: 25px;
+    /*Centrando el texto*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*Afectando a la propiedad transform con 3 segundos */
+    transition: transform .4s;
+}
+
+.caja-galeria img{
+    /*Se necesita un disply block junto con un margin auto para que se centro la iamgen*/
+    display: block;
+    width: 100%;  /*Ocupa el 100% de SU PADRE*/
+    height: 100%;
+    object-fit: cover; /*Hace que no se deforme tanto la IMAGEN*/
+    
+}
+
+/*Programando los @media para dispositivos moviles*/
+/*cuando llegue a 900px*/
+@media screen and (max-width:900px){
+    .caja-galeria{
+        width: 45%;
+    }
+    .caja-hover{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:500px){
+    .caja-galeria{
+        width: 90%;
+    }
+    .caja-hover{
+        font-size: 18px;
+    }
+}
